@@ -5,7 +5,7 @@ import Footer from '../footer/footer';
 
 const TermsAndConditions: React.FC = () => {
     return (
-    <div>
+    <div className='container mx-auto px-4'>
         <Navbar />
             <div className='container text-center'>
             <h1 className='text-center text-4xl font-bold text-priamry'>بسم الله الرحمن الرحيم </h1><br />

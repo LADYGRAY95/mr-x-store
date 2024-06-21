@@ -1,12 +1,12 @@
 'use client';
 
 import React from "react";
-import Banner1 from "../app/1.png";
-import Banner2 from "../app/2.png";
-import Banner3 from "../app/3.png";
-import Banner4 from "../app/banner4.png";
-import Banner5 from "../app/banner5.png";
-import Banner6 from "../app/banner6.png";
+import Banner1 from "/app/1.png";
+import Banner2 from "/app/2.png";
+import Banner3 from "/app/3.png";
+import Banner4 from "/app/banner4.png";
+import Banner5 from "/app/banner5.png";
+import Banner6 from "/app/banner6.png";
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);

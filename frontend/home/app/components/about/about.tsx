@@ -7,10 +7,8 @@ import Footer from '../footer/footer';
 
 const About: React.FC = () => {
     return (
-        <div className=''>
+        <div className='container mx-auto px-4'>
             <Navbar />
-            <br />
-            <Banner />
             <br />
             <h1 className='text-center text-4xl font-bold text-primary'>About Page</h1>
             <p className='text-xl text-center'>Welcome to the About us section !</p>
