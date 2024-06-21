@@ -5,6 +5,8 @@ import Logo from '/app/logo.png';
 import cart from '/app/emptycart.png';
 import { Link } from 'react-router-dom';
 
+
+
 const NavLinks = [
   {
     id: 1,
@@ -139,7 +141,7 @@ const Navbar: React.FC = () => {
     </button>
   </a>
 </Link>
-            <Link to="/" className='hover:scale-105 duration-200' ><img src={cart.src} alt="cart icon" className='h-9 w-9 relative top-1'/>  <span className="bg-primary text-white px-1 py-1 rounded-md text-sm font-medium relative top-2 left-6">0</span></Link>
+            <Link to="/cart" className='hover:scale-105 duration-200' ><img src={cart.src} alt="cart icon" className='h-9 w-9 relative top-1'/>  <span className="bg-primary text-white px-1 py-1 rounded-md text-sm font-medium relative top-2 left-6">0</span></Link>
             <button
               className='sm:hidden block text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white'
               onClick={toggleMobileMenu}

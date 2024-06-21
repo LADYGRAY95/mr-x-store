@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import Vector from "/app/bg.jpg";
-import hero1 from "/app/hero1.png";
-import hero2 from "/app/hero2.png";
-import hero3 from "/app/hero3.png";
-import hero4 from "/app/hero4.png";
+import Vector from "../app/bg.jpg";
+import hero1 from "../app/hero1.png";
+import hero2 from "../app/hero2.png";
+import hero3 from "../app/hero3.png";
+import hero4 from "../app/hero4.png";
 
 const bgImages = {
   backgroundImage: `url(${Vector.src})`,

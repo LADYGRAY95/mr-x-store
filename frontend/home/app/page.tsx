@@ -30,6 +30,7 @@ import ITunes from './components/giftcard/itunes';
 import PSNGiftCardSection from './components/giftcard/psn';
 import XboxGiftCardSection from './components/giftcard/xbox';
 import LoginPage from './components/login&register/login';
+import Cart from './pages/cart';
 
 const Page = () => {
   return (
@@ -56,6 +57,7 @@ const Page = () => {
           <Route path="/psn" element={<PSNGiftCardSection />} />
           <Route path="/xbox" element={<XboxGiftCardSection />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
     </div>
