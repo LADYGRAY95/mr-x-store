@@ -26,14 +26,26 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({storage: storage})
+const upload = multer({
+  storage: storage,
+});
+
 //Upload image
 app.use('/images', express.static(path.join(__dirname, '/upload/images')))
 app.post('/upload', upload.single('product'), (req, res) => {
-    res.json({
-        success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`})
-})
+  console.log('Text fields received:', req.body);
+  const port = 4000; // Replace with your actual server port
+  const serverDomain = 'http://localhost'; // Replace with your actual domain or IP address
+  
+  // Construct the full image URL
+  const image_url = `${serverDomain}:${port}/images/${req.file.filename}`;
+  
+  res.json({
+    success: 1,
+    image_url: image_url,
+  });
+});
+
 
 //schema for creating a products
 const productSchema = new mongoose.Schema({
@@ -74,8 +86,9 @@ const productSchema = new mongoose.Schema({
   // Create the Product model
   const Product = mongoose.model('Product', productSchema);
   
+  
   // Example route for adding a product
-  app.post('/addproduct', async (req, res) => {
+  app.post('/addproduct', upload.single('product'), async (req, res) => {
     let products = await Product.find({});
     let id ;
     if(products.length >0){
@@ -88,14 +101,17 @@ const productSchema = new mongoose.Schema({
     }
     try {
       const newProduct = new Product({
-        id:id,
+        id: id,
         name: req.body.name,
-        image: req.body.image,
+        image: req.body.image_url, 
         category: req.body.category,
         price: req.body.price,
         new_price: req.body.new_price,
-        available: req.body.available,
-      });
+        available: true, 
+    });
+    
+    await newProduct.save();
+    
   
       console.log(newProduct); // Log the new product instance
       await newProduct.save(); // Save the product to the database
