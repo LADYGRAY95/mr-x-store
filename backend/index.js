@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
+const { error } = require('console');
 
 
 app.use(express.json());
@@ -26,26 +27,17 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({
-  storage: storage,
-});
-
+const upload = multer({storage: storage})
 //Upload image
 app.use('/images', express.static(path.join(__dirname, '/upload/images')))
 app.post('/upload', upload.single('product'), (req, res) => {
   console.log('Text fields received:', req.body);
   const port = 4000; // Replace with your actual server port
-  const serverDomain = 'http://localhost'; // Replace with your actual domain or IP address
-  
-  // Construct the full image URL
-  const image_url = `${serverDomain}:${port}/images/${req.file.filename}`;
-  
   res.json({
-    success: 1,
-    image_url: image_url,
+      success: 1,
+      image_url: `http://localhost:${port}/images/${req.file.filename}`
   });
 });
-
 
 //schema for creating a products
 const productSchema = new mongoose.Schema({
@@ -65,7 +57,7 @@ const productSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    price: {
+    old_price: {
       type: Number,
       required: true,
     },
@@ -86,9 +78,8 @@ const productSchema = new mongoose.Schema({
   // Create the Product model
   const Product = mongoose.model('Product', productSchema);
   
-  
   // Example route for adding a product
-  app.post('/addproduct', upload.single('product'), async (req, res) => {
+  app.post('/addproduct', async (req, res) => {
     let products = await Product.find({});
     let id ;
     if(products.length >0){
@@ -101,17 +92,14 @@ const productSchema = new mongoose.Schema({
     }
     try {
       const newProduct = new Product({
-        id: id,
+        id:id,
         name: req.body.name,
-        image: req.body.image_url, 
+        image: req.body.image,
         category: req.body.category,
-        price: req.body.price,
+        old_price: req.body.price,
         new_price: req.body.new_price,
-        available: true, 
-    });
-    
-    await newProduct.save();
-    
+        available: req.body.available,
+      });
   
       console.log(newProduct); // Log the new product instance
       await newProduct.save(); // Save the product to the database
@@ -141,6 +129,84 @@ app.get('/allproducts' , async(req,res)=>{
     let products = await Product.find({});
     console.log("all products fetched");
     res.send(products);
+})
+
+//schema for creating a user model
+
+const Users = mongoose.model('Users', new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+    },
+    email:{
+        type: String,
+        required: true,
+        unique: true,
+    }, 
+    password: {
+        type: String,
+        required: true,
+    },
+    cartData: {
+        type: Object,
+        required: true,
+    },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
+}));
+
+//creating api for user registration
+app.post('/register', async (req, res) => {
+  let check = await Users.findOne({email:req.body.email});
+  if(check){
+    return res.status(400).json({success:false, message:"User already exists"});
+  } 
+  let cart =[]
+  for (let i=0; i<300 ; i++){
+    cart[i]=0;
+  }
+  const user = new Users({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      cartData: cart,
+  })
+
+  await user.save();
+
+  const data = {
+      user: {
+          id: user.id,
+      }
+  }
+
+  const token = jwt.sign(data,'secret_ecom');
+  res.json({success:true, token:token});
+}); 
+
+//creating endpoint for user login
+app.post('/login', async (req, res) => {
+  let user = await Users.findOne({email:req.body.email});
+  if(user){
+    const passCompare = req.body.password === user.password;
+    if(passCompare){
+      const data = {
+          user: {
+              id: user.id
+          }
+      }
+      const token = jwt.sign(data,'secret_ecom');
+      res.json({success:true,token});
+  }
+  else{
+    res.json({success:false, errors:"wrong Password"});
+  }
+}
+else{
+  res.json({success:false, errors:"User not found"});
+}
 })
 
 app.listen(port, (error) => {

@@ -12,7 +12,7 @@ const TermsAndConditions: React.FC = () => {
                 <h1 className='text-center text-4xl font-bold text-priamry'>Terms and Conditions</h1><br />
                 <h2 className='text-xl text-primary'>Introduction</h2>
                 <ul className='text-sm text-gray-400'>
-                    <li>These terms and conditions (the "Terms") govern the use of our online gaming store (the "Store") and the services provided by us.</li>
+                    <li>These terms and conditions (the Terms) govern the use of our online gaming store (the Store) and the services provided by us.</li>
                     <li>By accessing or using the Store, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use the Store.</li><br />
                 </ul>
                 <h2 className='text-xl text-primary'>Purchases and Payments</h2>
@@ -46,7 +46,7 @@ const TermsAndConditions: React.FC = () => {
             <h1 className='text-center text-4xl font-bold text-priamry'>Privacy Policy</h1>
             <h2 className='text-xl text-primary'> Introduction</h2>
                 <ul className='text-sm text-gray-400'>
-                    <li>This privacy policy (the "Policy") explains how we collect, use, and protect your personal information when you use our online gaming store (the "Store").</li>
+                    <li>This privacy policy (the Policy) explains how we collect, use, and protect your personal information when you use our online gaming store (the Store).</li>
                     <li>By using the Store, you consent to the collection and use of your personal information as described in this Policy.</li>
                 </ul><br />
                 <h2 className='text-xl text-primary'>Information Collection</h2>
@@ -87,7 +87,7 @@ const TermsAndConditions: React.FC = () => {
     <h1 className='text-center text-4xl font-bold text-priamry' >الشروط والأحكام</h1>
     <h2 className='text-xl text-primary '>مقدمة</h2>
     <ul className='text-sm text-gray-400 '>
-        <li>تحكم هذه الشروط والأحكام ("الشروط") استخدام متجرنا للألعاب الإلكترونية ("المتجر") والخدمات المقدمة من قِبلنا.</li>
+        <li>تحكم هذه الشروط والأحكام (الشروط) استخدام متجرنا للألعاب الإلكترونية (المتجر) والخدمات المقدمة من قِبلنا.</li>
         <li>من خلال الوصول إلى المتجر أو استخدامه، فإنك توافق على الالتزام بهذه الشروط. إذا لم توافق على هذه الشروط، فيرجى عدم استخدام المتجر.</li>
         <br />
     </ul>
@@ -127,7 +127,7 @@ const TermsAndConditions: React.FC = () => {
     <h1 className='text-center text-4xl font-bold text-priamry'>سياسة الخصوصية</h1>
     <h2 className='text-xl text-primary '>مقدمة</h2>
     <ul className='text-sm text-gray-400 '>
-        <li>تشرح هذه سياسة الخصوصية ("السياسة") كيفية جمعنا واستخدامنا وحماية معلوماتك الشخصية عند استخدامك لمتجرنا للألعاب الإلكترونية ("المتجر").</li>
+        <li>تشرح هذه سياسة الخصوصية (السياسة) كيفية جمعنا واستخدامنا وحماية معلوماتك الشخصية عند استخدامك لمتجرنا للألعاب الإلكترونية (المتجر).</li>
         <li>باستخدامك للمتجر، فإنك توافق على جمع واستخدام معلوماتك الشخصية على النحو المبين في هذه السياسة.</li>
         <br />
     </ul>

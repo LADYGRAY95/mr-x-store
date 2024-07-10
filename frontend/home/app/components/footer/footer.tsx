@@ -67,7 +67,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} MR X Store. All Rights Reserved.
           </div>
           <div className="flex flex-col  items-center justify-center w-full mt-8">
-  <div className="relative top-8">Programmed and designed with love by : 😁</div>
+  <div className="relative top-8">Programmed and designed by : </div>
   <div className="rounded-xl overflow-hidden  relative text-center p-4 group items-center flex flex-col max-w-sm hover:shadow-2xl transition-all duration-500 shadow-xl mt-8">
     <div className="text-gray-500 group-hover:scale-105 transition-all">
       <svg className="w-16 h-16 group-hover:text-primary" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@ const Footer = () => {
     </div>
     <div className="group-hover:pb-10 transition-all duration-500 delay-200">
       <h1 className="font-semibold text-gray-700 group-hover:text-primary" >Youssr Chouaya</h1>
-      <p className="text-gray-500 text-sm">Freelancer</p>
+      <p className="text-gray-500 text-sm"></p>
     </div>
     <div className="flex items-center transition-all duration-500 delay-200 group-hover:bottom-3 -bottom-full absolute gap-2 justify-evenly w-full">
       <div className="flex gap-3 text-2xl bg-gray-700 text-white p-1 hover:p-2 transition-all duration-500 delay-200 rounded-full shadow-sm">

@@ -1,0 +1,50 @@
+/* navbar.css */
+/* Navbar styles */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Center the items vertically */
+    align-items: center; /* Center the items horizontally */
+    flex-wrap: nowrap;
+    padding: 15px 60px;
+    box-shadow: 0 1px 3px -2px red;
+    margin-bottom: 1px;
+    background: black;
+    gap: 50px; /* Increased the gap between items */
+}
+
+.nav-logo, .nav-profile {
+    display: block;
+    flex-shrink: 0; /* Prevents flex items from shrinking */
+}
+
+.nav-logo {
+    height: 100px;
+    width: 100px;
+}
+
+.nav-profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: row;
+        padding: 15px 30px;
+        margin: 0 5px;
+    }
+
+    .nav-logo {
+        margin-bottom: 20px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav-profile {
+        width: 40px;
+        height: 40px;
+    }
+}

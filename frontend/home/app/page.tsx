@@ -31,14 +31,18 @@ import PSNGiftCardSection from './components/giftcard/psn';
 import XboxGiftCardSection from './components/giftcard/xbox';
 import LoginPage from './components/login&register/login';
 import Cart from './pages/cart';
+import dynamic from 'next/dynamic'
 
 const Page = () => {
+  const MyDynamicComponent = dynamic(() => import('./page'), {
+    ssr: false,
+  })
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/About" element={<About/>} />
           <Route path="/useragreement" element={<TermsAndConditions/>} />
           <Route path="/gameacct" element={<GamesAccountsSection />} />
           <Route path="/gameskey" element={<GameKey />} />
@@ -64,4 +68,16 @@ const Page = () => {
     
   );
 }
-export default Page;
+
+export default function MyPage() {
+  return (
+    <div>
+      {typeof window !== 'undefined' && (
+        <div>
+          <Page />
+        </div>
+      
+      )}
+    </div>
+  );
+}
