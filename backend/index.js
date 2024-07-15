@@ -19,6 +19,7 @@ mongoose.connect('mongodb+srv://yossr:youssrouch22@cluster0.scmoie2.mongodb.net/
 app.get('/', (req, res) => {
     res.send('Express APP is running')
 })
+
 //Image storage engine
 const storage = multer.diskStorage({
     destination: './upload/images',
