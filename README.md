@@ -1,5 +1,9 @@
 # MRXSTORE - E-Commerce Store
 
+
+![Opera Snapshot_2024-07-10_132609_localhost](https://github.com/LADYGRAY95/mr-x-store/assets/120677777/3967734c-3534-4ef4-b33b-abbae177b98c)
+
+
 ## Introduction
 MR X STORE is a modern, responsive e-commerce platform built using the latest web technologies. Developed with a focus on performance, scalability, and user experience, MR X STORE provides a seamless shopping experience for customers across all devices.
 
