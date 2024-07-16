@@ -31,7 +31,7 @@ import PSNGiftCardSection from './components/giftcard/psn';
 import XboxGiftCardSection from './components/giftcard/xbox';
 import LoginPage from './components/login&register/login';
 import Cart from './pages/cart';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
 const Page = () => {
   const MyDynamicComponent = dynamic(() => import('./page'), {

@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@honeybadger-io/js": "^6.9.3",
-    "@honeybadger-io/nextjs": "^5.9.4",
-    "@honeybadger-io/react": "^6.1.23",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
     "next": "14.2.4",
