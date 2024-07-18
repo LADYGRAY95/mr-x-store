@@ -7,7 +7,7 @@ import hero3 from "/app/hero3.png";
 import hero4 from "/app/hero4.png";
 
 const bgImages = {
-  backgroundImage: `url(${Vector.src})`,
+  backgroundImage: `url(${Vector})`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundSize: 'cover',

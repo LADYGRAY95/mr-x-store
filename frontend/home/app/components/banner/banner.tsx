@@ -2,7 +2,7 @@
 
 import React from "react";
 import Banner1 from "/app/1.png";
-import Banner2 from "/app/2.png";
+import Banner2 from "../../../app/2.png";
 import Banner3 from "/app/3.png";
 import Banner4 from "/app/banner4.png";
 import Banner5 from "/app/banner5.png";

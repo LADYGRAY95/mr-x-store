@@ -17,7 +17,6 @@ const Home = () => {
       <Services />
       <Banner />
       <Gaming />
-      <Video />
       <Gift />
       <Footer />
     </div>
